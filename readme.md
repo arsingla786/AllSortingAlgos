@@ -12,3 +12,6 @@
 | Heap Sort         | C++      | Uses a binary heap                 |
 | Radix Sort        | C++      | Non-comparison integer sort        |
 | Counting Sort     | C++      | Counting-based integer sort        |
+
+
+last three algo will be uploaded shorlty
