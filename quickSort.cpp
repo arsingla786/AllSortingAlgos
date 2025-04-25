@@ -1,7 +1,7 @@
 /*In quick sort , we choose any element to be pivot
 we  traverse through the whole array and assign the pivot its correct position 
 then the array is divided into two halves (left of pivot and right of pivot)
-we recursil=vely perform same operation for both halves by selecting new pivots*/
+we recursively perform same operation for both halves by selecting new pivots*/
 
 #include <iostream>
 #include<bits/stdc++.h>
