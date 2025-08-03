@@ -3,7 +3,7 @@
 
 
  Algorithm         | Language | Description                        |
-|------------------|----------|------------------------------------|
+|------------------|----------|------------------------------------| 
 | Bubble Sort       | C        | Repeatedly swaps adjacent elements |
 | Selection Sort    | C        | Selects minimum and places it      |
 | Insertion Sort    | C        | Inserts elements into sorted part  |
