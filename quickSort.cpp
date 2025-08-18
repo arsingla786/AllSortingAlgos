@@ -4,7 +4,7 @@ then the array is divided into two halves (left of pivot and right of pivot)
 we recursively perform same operation for both halves by selecting new pivots*/
 
 #include <iostream>
-#include<bits/stdc++.h>
+#include<bits/stdc++.h> 
 using namespace std;
 
 int partition(vector<int> &arr,int st,int end ){
