@@ -1,6 +1,6 @@
 
-##
-this This repository contains implementations of popular **sorting algorithms** written in **C and C++**. Each algorithm is in its own file with clear logic and comments to help you understand how it works. 
+#
+This repository contains implementations of popular **sorting algorithms** written in **C and C++**. Each algorithm is in its own file with clear logic and comments to help you understand how it works. 
 
  
  Algorithm         | Language | Description                        |
