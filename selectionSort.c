@@ -8,17 +8,21 @@ int main() {
 	int arr[5]= {1,6,3,0,5};
 	int n=5;
 	int i,j;
-
-	for(i=0; i< n-1 ; i++) {
-		for(j=i+1; j<n; j++) {
-			if(arr[j]<arr[i]) {
-				//swap arr[j] and arr[minIndex];
-				int temp = arr[j];
-				arr[j]=arr[i];
-				arr[i]=temp;
-			}
-		}
-	}
+	int minIndex;
+    for(int i=0;i<n-1;i++){
+      minIndex= i ;
+      for(int j=i+1;j<n;j++){
+        if(arr[j]<minIndex){
+          minIndex=j;
+        }
+      }
+      
+        if(arr[minIndex]!=i){
+          swap(arr[minIndex],arr[i]);
+        
+      }
+    }	
+	//for each iteration find the shortest element and compare with the assumed element
 	printf("\n sorted array : ");
 	for(i=0; i<n; i++) {
 		printf("%d ",arr[i]);
