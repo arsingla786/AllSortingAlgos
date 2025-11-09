@@ -15,4 +15,4 @@ This repository contains implementations of popular **sorting algorithms** writt
 | Counting Sort     | C++      | Counting-based integer sort        |
 
 
-last three algo will be uploaded shorlty
+fixed typos in readme - by me 
