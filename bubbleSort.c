@@ -5,7 +5,7 @@ It "bubbles up" the largest element to the end in each pass*/
 
 
 #include<stdio.h>
-int main(){
+int main(){ 
     int arr[6]={45,3,31,5,35,6};
     int n=6;
     int i,j,temp;
