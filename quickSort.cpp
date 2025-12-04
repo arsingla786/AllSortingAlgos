@@ -1,24 +1,24 @@
-#include<bits/stdc++.h>
+//if pivot is beginning element 
 
+#include<bits/stdc++.h>
 using namespace std;
 
-int pivotIndex(int low, int high,vector<int>& arr){
-  
+int pivotIndex(vector<int>& arr, int low, int high){
   int pivot = arr[low];
+  int i=low+1;
+  int j = high;
   
-  int i = low;
-  int j = high-1;
   while(i<j){
-    do{
+    while(i<=high && arr[i]<pivot){
       i++;
-    }while(arr[i]<=pivot);
+    }
     
-    do{
-      j--;
-    }while(arr[j]>pivot);
+    while(j>=low && arr[j]>pivot){
+    j--;  
+    }
     
     if(i<j){
-      swap(arr[i],arr[j]);
+      swap(arr[j],arr[i]);
     }
     
   }
@@ -26,25 +26,31 @@ int pivotIndex(int low, int high,vector<int>& arr){
   return j;
 }
 
-vector<int> quickSort(int low,int high,vector<int>& arr){
+
+vector<int> quickSort(vector<int>& arr, int low,int high){
   
   if(low<high){
-    int j = pivotIndex(low,high,arr);
-    quickSort(low,j,arr);
-    quickSort(j+1,high,arr);
+    int j = pivotIndex(arr,low,high);
+    quickSort(arr, low, j-1);
+    quickSort(arr,j+1,high);
   }
-return arr;
-  
+return arr;  
 }
 
-int main() 
-{
-  vector<int> arr = {10,5,8,12,15,6,3,9,16};
-  int l = 0;
-  int h = arr.size();
+
+
+
+int main(){
+  vector<int> arr= {4,5,2,6,7,9,1,3};
   
-  vector<int> ans = quickSort(l,h,arr);
-  for(auto i:ans){
+  int low= 0;
+  int high = arr.size()-1;
+  
+  vector<int> ans = quickSort(arr,low,high);
+  
+  
+  for(auto i: ans){
     cout<<i<<" ";
   }
+  
 }
