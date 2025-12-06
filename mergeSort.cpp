@@ -4,64 +4,67 @@
 It divides the array into halves, 
 recursively sorts each half, 
 and then merges them back together in sorted order.*/
-
-#include <iostream> 
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
-void merge(vector<int> &arr, int st,int mid,int end){
-    vector<int> temp;
-    int i=st;
-    int j=mid+1;
-//compare an push elements into the temp array
-    while( i<=mid &&  j<=end){     
-        if(arr[i]<=arr[j]){
-            temp.push_back(arr[i]);
-            i++;
-        }
-        else{
-            temp.push_back(arr[j]);
-            j++;
-        }
+void merge(vector<int>& arr, int low,int mid, int high){
+  
+  vector<int> ans;
+  int left = low;
+  int right = mid+1;
+  
+    while(left<=mid && right <=high){
+      if(arr[left]<=arr[right]){
+        ans.push_back(arr[left]);
+        left++;
+      }
+      else{
+        ans.push_back(arr[right]);
+        right++;
+      }
     }
-    //for remaining elements
-    while(i<=mid){
-        temp.push_back(arr[i]);
-        i++;
+    //push remaining
+    while(left<=mid){
+      ans.push_back(arr[left]);
+      left++;
     }
-    while(j<=end){
-        temp.push_back(arr[j]);
-        j++;
+    while(right<=high){
+      ans.push_back(arr[right]);
+      right++;
     }
+    //update the array 
+    for(int i=low;i<=high;i++){
+      arr[i] = ans[i-low];
+    }
+    
+}
 
-    //now push all these elements in arr
-    for(int idx=0;idx<temp.size();idx++){
-        arr[idx+st]=temp[idx]; 
+
+void mergeSort(vector<int>& arr, int low, int high){
+  if(low<high){
+    int mid = (low+high)/2;
+    mergeSort(arr,low,mid);
+    mergeSort(arr,mid+1,high);
+    merge(arr,low,mid,high);
+  }
+}
+
+
+int main() 
+{
+    vector<int> arr = {3,1,2,4,1,5,2,6,4};
+        int low = 0;
+        int high = arr.size()-1;
+        
+     mergeSort(arr,low,high);
+    for(auto i:arr){
+      cout<<i<<" ";
     }
 }
-void mergeSort(vector<int> &arr, int st,int end){
-    if(st<end){
-       int mid= st +(end-st)/2;
-       //for left half
-       mergeSort(arr,st,mid);
-       //for right half
-       mergeSort(arr,mid+1,end);
-       //call the merge function
-       merge(arr,st,mid,end);
-    }
- }
 
-int main() {
-    vector<int> arr={23,12,14,56,32,20};
 
-    mergeSort(arr,0,arr.size()-1);
 
-for(int x : arr){
-    cout<< x <<" ";
-} 
-return 0;
 
-}
 
 
 //TC - O(nlogN)
