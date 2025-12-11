@@ -7,7 +7,7 @@ This repository contains implementations of popular **sorting algorithms** writt
 |------------------|----------|------------------------------------|        
 | Bubble Sort       | C        | Repeatedly swaps adjacent elements |
 | Selection Sort    | C        | Selects minimum and places it      |
-| Insertion Sort    | C        | Inserts elements into sorted part  |
+| Insertion Sort    | C        | Inserts elements into sorted part  | 
 | Merge Sort        | C++      | Divide and conquer algorithm       |
 | Quick Sort        | C++      | Picks a pivot and partitions       |
 | Heap Sort         | C++      | Uses a binary heap                 |
